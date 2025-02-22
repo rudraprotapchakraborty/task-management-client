@@ -19,7 +19,7 @@ const Home = () => {
   const fetchTasks = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/tasks");
+      const res = await axios.get("https://task-management-server-production-c1e0.up.railway.app/tasks");
       setTasks(res.data);
     } catch {
       setError("Failed to fetch tasks. Please try again.");
@@ -42,7 +42,7 @@ const Home = () => {
     const taskWithTimestamp = { ...newTask, timestamp: new Date().toISOString() };
 
     try {
-      await axios.post("http://localhost:5000/tasks", taskWithTimestamp);
+      await axios.post("https://task-management-server-production-c1e0.up.railway.app/tasks", taskWithTimestamp);
       fetchTasks(); // Ensure latest tasks are loaded
       closeAddTaskModal();
     } catch (error) {
@@ -57,7 +57,7 @@ const Home = () => {
   // Update Task
   const handleEdit = async (updatedTask) => {
     try {
-      await axios.put(`http://localhost:5000/tasks/${updatedTask._id}`, updatedTask);
+      await axios.put(`https://task-management-server-production-c1e0.up.railway.app/tasks/${updatedTask._id}`, updatedTask);
       fetchTasks(); // Fetch latest tasks from backend
       closeEditModal();
     } catch (error) {
@@ -74,7 +74,7 @@ const Home = () => {
     if (!deleteConfirm) return;
 
     try {
-      await axios.delete(`http://localhost:5000/tasks/${deleteConfirm}`);
+      await axios.delete(`https://task-management-server-production-c1e0.up.railway.app/tasks/${deleteConfirm}`);
       fetchTasks(); // Ensure UI updates correctly
       closeDeleteConfirm();
     } catch (error) {
@@ -91,7 +91,7 @@ const Home = () => {
     if (!taskToUpdate || taskToUpdate.category === over.id) return;
 
     try {
-      await axios.put(`http://localhost:5000/tasks/${active.id}`, { category: over.id });
+      await axios.put(`https://task-management-server-production-c1e0.up.railway.app/tasks/${active.id}`, { category: over.id });
       fetchTasks(); // Ensure UI updates after backend change
     } catch (error) {
       console.error("❌ Error updating task category:", error.response?.data || error.message);

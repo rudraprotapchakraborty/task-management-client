@@ -18,7 +18,7 @@ const SocialLogin = () => {
             console.log("Google User:", user);
 
             // Send user info to backend for MongoDB storage
-            await axios.post("http://localhost:5000/users", {
+            await axios.post("https://task-management-server-production-c1e0.up.railway.app/users", {
                 uid: user.uid,
                 email: user.email,
                 displayName: user.displayName,
