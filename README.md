@@ -1,59 +1,58 @@
-# Task Management Application (Client)
+# Task Management Application (Client-Side)
 
-## Live Link
-[Task Management App](https://task-management-2edae.web.app/)
+## 📌 Short Description
+A task management web application with drag-and-drop functionality for organizing tasks into different categories (To-Do, In Progress, Done). It includes real-time updates, Firebase authentication, and a responsive UI built with React and Tailwind CSS.
 
-## Description
-This is the frontend of the Task Management Application, built using **Vite.js** and **React**. It provides an interactive UI for managing tasks, allowing users to add, edit, delete, and reorder them using drag-and-drop functionality. The application supports real-time synchronization with a **MongoDB backend** and **Firebase Authentication**.
+## 🔗 Live Links
+- **Live Demo:** [Task Management App](https://task-management-2edae.web.app/)
+- **Backend Repository:** [GitHub](https://github.com/rudraprotapchakraborty/task-management-server)
 
-## Features
-- **Authentication**: Google Sign-In via Firebase.
-- **Task Management**:
-  - Add, edit, and delete tasks.
-  - Drag-and-drop to reorder or change categories.
-  - Real-time syncing with MongoDB.
-- **Database & Persistence**:
-  - Uses MongoDB via an Express.js backend.
-  - Ensures real-time updates with WebSockets.
-- **Responsive UI**:
-  - Works seamlessly on both desktop and mobile.
-  - Minimalist design with a maximum of four colors.
-- **Bonus Features**:
-  - Dark mode toggle.
+## 📦 Dependencies
+The project requires the following dependencies:
 
-## Technologies Used
-- **Frontend**: Vite.js, React, Tailwind CSS
-- **State Management**: React Context API
-- **Authentication**: Firebase Authentication
+- **React** (Frontend framework)
+- **Vite.js** (Build tool)
+- **@dnd-kit/core** (Drag-and-drop functionality)
+- **Axios** (HTTP requests)
+- **Firebase** (Authentication & real-time updates)
+- **Tailwind CSS** (Styling)
 
-## Installation Steps
-### Clone the repository
-```sh
-git clone https://github.com/rudraprotapchakraborty/task-management-client.git
-cd task-management-client
-```
+## 🚀 Installation Steps
 
-### Install dependencies
-```sh
-npm install
-```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/rudraprotapchakraborty/task-manager-client.git
+   ```
 
-### Create an `.env` file and add the Firebase config
-```sh
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-VITE_SERVER_URL=https://your-backend-url.com
-```
+2. **Navigate to the project directory:**
+   ```bash
+   cd task-manager-client
+   ```
 
-### Run the application
-```sh
-npm run dev
-```
+3. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-## License
-This project is licensed under the MIT License.
+4. **Create a `.env` file and add necessary environment variables (e.g., Firebase config, API URL).**
 
+5. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+6. **Open the application in your browser:**
+   ```
+   http://localhost:5173
+   ```
+
+## 🛠️ Technologies Used
+- **Frontend:** React, Vite.js, Tailwind CSS
+- **State Management:** React Hooks
+- **Drag & Drop:** @dnd-kit/core
+- **Authentication:** Firebase
+- **API Requests:** Axios
+- **Backend:** Express.js, MongoDB (for API integration)
+
+---
+Feel free to contribute, raise issues, or suggest improvements! 🚀
