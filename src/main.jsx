@@ -11,6 +11,7 @@ import AuthProvider from "./context/AuthContext/AuthProvider.jsx";
 import Signup from "./pages/Signup.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PrivateRoute from "./context/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <PrivateRoute><Home></Home></PrivateRoute>
       },
       {
         path: "/login",

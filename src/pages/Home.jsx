@@ -46,7 +46,7 @@ const Home = () => {
       fetchTasks(); // Ensure latest tasks are loaded
       closeAddTaskModal();
     } catch (error) {
-      console.error("❌ Error adding task:", error.response?.data || error.message);
+      console.error("Error adding task:", error.response?.data || error.message);
     }
   };
 
@@ -61,7 +61,7 @@ const Home = () => {
       fetchTasks(); // Fetch latest tasks from backend
       closeEditModal();
     } catch (error) {
-      console.error("❌ Error updating task:", error.response?.data || error.message);
+      console.error("Error updating task:", error.response?.data || error.message);
     }
   };
 
@@ -78,7 +78,7 @@ const Home = () => {
       fetchTasks(); // Ensure UI updates correctly
       closeDeleteConfirm();
     } catch (error) {
-      console.error("❌ Error deleting task:", error.response?.data || error.message);
+      console.error("Error deleting task:", error.response?.data || error.message);
     }
   };
 
@@ -94,7 +94,7 @@ const Home = () => {
       await axios.put(`https://task-management-server-production-c1e0.up.railway.app/tasks/${active.id}`, { category: over.id });
       fetchTasks(); // Ensure UI updates after backend change
     } catch (error) {
-      console.error("❌ Error updating task category:", error.response?.data || error.message);
+      console.error("Error updating task category:", error.response?.data || error.message);
     }
   };
 
