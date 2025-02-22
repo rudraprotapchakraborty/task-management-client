@@ -72,7 +72,7 @@ const getBadgeColor = (category) => {
     case "To-Do":
       return "bg-yellow-200 text-yellow-800 dark:bg-yellow-700 dark:text-yellow-100";
     case "In Progress":
-      return "bg-blue-200 text-blue-800 dark:bg-blue-700 dark:text-blue-100";
+      return "bg-purple-200 text-purple-800 dark:bg-purple-700 dark:text-purple-100";
     case "Done":
       return "bg-green-200 text-green-800 dark:bg-green-700 dark:text-green-100";
     default:
