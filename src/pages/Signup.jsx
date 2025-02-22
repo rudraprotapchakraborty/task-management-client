@@ -5,11 +5,9 @@ import SocialLogin from "../pages/SocialLogin";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ThemeContext } from "../context/ThemeContext";
 
 const Signup = () => {
     const { createUser } = useContext(AuthContext);
-    const { darkMode } = useContext(ThemeContext);
     const [errorMessage, setErrorMessage] = useState("");
     const location = useLocation();
     const navigate = useNavigate();
@@ -64,89 +62,75 @@ const Signup = () => {
     };
 
     return (
-        <div className="hero min-h-screen px-4 sm:px-6 lg:px-8">
-            <div className="hero-content flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
-                {/* Signup Form */}
-                <div className="card w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm p-6 shadow-2xl dark:bg-gray-800">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center lg:text-left text-gray-800 dark:text-white">
-                        Sign Up now!
-                    </h1>
-                    <form onSubmit={handleSignup} className="card-body p-0">
-                        <div className="form-control mb-4">
-                            <label className="label">
-                                <span className="label-text text-gray-800 dark:text-white">
-                                    Name
-                                </span>
-                            </label>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                className="input input-bordered bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white"
-                                required
-                            />
-                        </div>
-                        <div className="form-control mb-4">
-                            <label className="label">
-                                <span className="label-text text-gray-800 dark:text-white">
-                                    Email
-                                </span>
-                            </label>
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                className="input input-bordered bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white"
-                                required
-                            />
-                        </div>
-                        <div className="form-control mb-4">
-                            <label className="label">
-                                <span className="label-text text-gray-800 dark:text-white">
-                                    Photo URL
-                                </span>
-                            </label>
-                            <input
-                                type="url"
-                                name="photo"
-                                placeholder="Photo URL"
-                                className="input input-bordered bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white"
-                                required
-                            />
-                        </div>
-                        <div className="form-control mb-4">
-                            <label className="label">
-                                <span className="label-text text-gray-800 dark:text-white">
-                                    Password
-                                </span>
-                            </label>
-                            <input
-                                type="password"
-                                name="password"
-                                placeholder="Password"
-                                className="input input-bordered bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-white"
-                                required
-                            />
-                        </div>
-                        {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
-                        <div className="form-control mt-6">
-                            <button className="btn border-none w-full bg-purple-600 text-white hover:bg-purple-700">
-                                Sign Up
-                            </button>
-                        </div>
-                        <SocialLogin />
-                    </form>
-                    <p className="mt-4 text-center lg:text-left text-gray-700 dark:text-white">
-                        Already have an account?{" "}
-                        <NavLink to="/login">
-                            <span className="font-semibold text-purple-600 hover:text-purple-700">
-                                Login.
-                            </span>
-                        </NavLink>
-                    </p>
-                </div>
+        <div className="hero min-h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8">
+    <div className="card w-full max-w-lg p-8 shadow-2xl dark:bg-gray-800 rounded-lg">
+        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-white">
+            Sign Up Now!
+        </h1>
+        <form onSubmit={handleSignup} className="space-y-4">
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text text-gray-800 dark:text-white">Name</span>
+                </label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    className="input input-bordered w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white"
+                    required
+                />
             </div>
-        </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text text-gray-800 dark:text-white">Email</span>
+                </label>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    className="input input-bordered w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white"
+                    required
+                />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text text-gray-800 dark:text-white">Photo URL</span>
+                </label>
+                <input
+                    type="url"
+                    name="photo"
+                    placeholder="Profile Photo URL"
+                    className="input input-bordered w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white"
+                    required
+                />
+            </div>
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text text-gray-800 dark:text-white">Password</span>
+                </label>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter Password"
+                    className="input input-bordered w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white"
+                    required
+                />
+            </div>
+            {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
+            <button className="btn w-full bg-purple-600 text-white hover:bg-purple-700">
+                Sign Up
+            </button>
+            <SocialLogin />
+        </form>
+        <p className="mt-4 text-center text-gray-700 dark:text-white">
+            Already have an account?{" "}
+            <NavLink to="/login" className="font-semibold text-purple-600 hover:text-purple-700">
+                Login.
+            </NavLink>
+        </p>
+    </div>
+</div>
+
     );
 };
 

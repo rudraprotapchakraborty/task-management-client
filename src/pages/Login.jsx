@@ -33,50 +33,50 @@ const Login = () => {
   };
 
   return (
-    <div className="hero min-h-screen px-4 sm:px-6 lg:px-8">
-      <div className="hero-content flex flex-col-reverse lg:flex-row items-center justify-between gap-8">
-        <div className="card w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm p-6 shadow-2xl bg-white dark:bg-gray-800 transition-colors duration-300">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-center lg:text-left text-gray-900 dark:text-white transition-colors duration-300">
-            Login now!
-          </h1>
-          <form onSubmit={handleLogin} className="card-body p-0">
-            <div className="form-control mb-4">
-              <label className="label text-gray-900 dark:text-white transition-colors duration-300">
-                <span className="label-text text-gray-800 dark:text-white">Email</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                className="input input-bordered bg-white text-gray-900 dark:bg-gray-700 dark:text-white transition-colors duration-300"
-                required
-              />
-            </div>
-            <div className="form-control mb-6">
-              <label className="label text-gray-900 dark:text-white transition-colors duration-300">
-                <span className="label-text text-gray-800 dark:text-white">Password</span>
-              </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                className="input input-bordered bg-white text-gray-900 dark:bg-gray-700 dark:text-white transition-colors duration-300"
-                required
-              />
+    <div className="hero min-h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8">
+    <div className="card w-full max-w-lg p-8 shadow-2xl dark:bg-gray-800 rounded-lg">
+        <h1 className="text-3xl font-bold mb-6 text-center text-gray-800 dark:text-white">
+            Login Now!
+        </h1>
+        <form onSubmit={handleLogin} className="space-y-4">
+            <div className="form-control">
+                <label className="label">
+                    <span className="label-text text-gray-800 dark:text-white">Email</span>
+                </label>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    className="input input-bordered w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white"
+                    required
+                />
             </div>
             <div className="form-control">
-              <button className="btn border-none bg-purple-400 dark:bg-purple-600 text-white w-full transition-colors duration-300">
-                Login
-              </button>
+                <label className="label">
+                    <span className="label-text text-gray-800 dark:text-white">Password</span>
+                </label>
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    className="input input-bordered w-full bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white"
+                    required
+                />
             </div>
+            <button className="btn w-full bg-purple-600 text-white hover:bg-purple-700">
+                Login
+            </button>
             <SocialLogin />
-          </form>
-          <p className="mt-4 text-center lg:text-left text-gray-900 dark:text-white transition-colors duration-300">
-            Don’t have an account? <NavLink to="/signup" className="text-purple-600 font-semibold">Sign Up.</NavLink>
-          </p>
-        </div>
-      </div>
+        </form>
+        <p className="mt-4 text-center text-gray-700 dark:text-white">
+            Don’t have an account?{" "}
+            <NavLink to="/signup" className="font-semibold text-purple-600 hover:text-purple-700">
+                Sign Up.
+            </NavLink>
+        </p>
     </div>
+</div>
+
   );
 };
 
