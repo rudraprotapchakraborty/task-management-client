@@ -103,7 +103,7 @@ const Home = () => {
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 flex flex-col items-center p-6">
         <h1 className="text-3xl font-bold mb-6">Task Management Board</h1>
 
-        <button onClick={openAddTaskModal} className="px-4 py-2 bg-blue-600 text-white rounded mb-4">
+        <button onClick={openAddTaskModal} className="px-4 py-2 bg-purple-600 text-white rounded mb-4">
           + Add Task
         </button>
 
@@ -141,18 +141,18 @@ const Home = () => {
               placeholder="Task title"
               value={newTask.title}
               onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-              className="w-full p-2 border rounded mb-2"
+              className="w-full p-2 border rounded mb-2 bg-white dark:bg-black"
             />
             <textarea
               placeholder="Task description"
               value={newTask.description}
               onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
-              className="w-full p-2 border rounded mb-2"
+              className="w-full p-2 border rounded mb-2 bg-white dark:bg-black"
             ></textarea>
             <select
               value={newTask.category}
               onChange={(e) => setNewTask({ ...newTask, category: e.target.value })}
-              className="w-full p-2 border rounded mb-4"
+              className="w-full p-2 border rounded mb-4 bg-white dark:bg-black"
             >
               <option value="To-Do">To-Do</option>
               <option value="In Progress">In Progress</option>
@@ -162,7 +162,7 @@ const Home = () => {
               <button onClick={closeAddTaskModal} className="px-4 py-2 bg-gray-500 text-white rounded">
                 Cancel
               </button>
-              <button onClick={handleAddTask} className="px-4 py-2 bg-blue-600 text-white rounded">
+              <button onClick={handleAddTask} className="px-4 py-2 bg-purple-600 text-white rounded">
                 Add
               </button>
             </div>

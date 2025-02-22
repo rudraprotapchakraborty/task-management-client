@@ -22,7 +22,7 @@ const TaskCard = ({ task, onDelete, onEdit }) => {
       <div className="flex justify-between items-center">
         <h3 className="font-semibold text-gray-800 dark:text-gray-100">{task.title}</h3>
         <div className="flex gap-2">
-          <button onClick={() => onEdit(task)} className="text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500">
+          <button onClick={() => onEdit(task)} className="text-purple-500 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-500">
             <FaEdit />
           </button>
           <button onClick={() => onDelete(task._id)} className="text-red-500 dark:text-red-400 hover:text-red-700 dark:hover:text-red-500">
