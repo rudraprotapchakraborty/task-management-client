@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 const EditTaskModal = ({ task, onClose, onSave }) => {
@@ -5,9 +6,22 @@ const EditTaskModal = ({ task, onClose, onSave }) => {
   const [description, setDescription] = useState(task.description || "");
   const [category, setCategory] = useState(task.category);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSave({ ...task, title, description, category });
+
+    try {
+      await axios.put(
+        `https://task-management-server-production-c1e0.up.railway.app/tasks/${task._id}`,
+        { title, description, category }
+      );
+      onSave(); // Refetch tasks after saving
+      onClose();
+    } catch (error) {
+      console.error(
+        "Error updating task:",
+        error.response?.data || error.message
+      );
+    }
   };
 
   return (

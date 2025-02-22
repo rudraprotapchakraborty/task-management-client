@@ -10,7 +10,7 @@ const Column = ({ title, tasks, onEdit, onDelete }) => {
       <div className="space-y-3">
         {tasks.length > 0 ? (
           tasks.map((task) => (
-            <TaskCard key={task.id} task={task} onEdit={onEdit} onDelete={onDelete} />
+            <TaskCard key={task._id} task={task} onEdit={onEdit} onDelete={onDelete} />
           ))
         ) : (
           <p className="text-gray-400 dark:text-gray-400 text-sm italic text-center">No tasks</p>
