@@ -5,7 +5,6 @@ import { ThemeContext } from "../context/ThemeContext";
 import { FaMoon, FaSun } from "react-icons/fa";
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState("");
   const [scrolling, setScrolling] = useState(false);
   const { user, signOutUser } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,21 +37,6 @@ const Navbar = () => {
 
   const links = (
     <>
-      <li>
-        <NavLink
-          to="/"
-          onClick={() => setActiveLink("home")}
-          className={`${
-            activeLink === "home"
-              ? "text-purple-500" // Active link color
-              : darkMode
-              ? "text-gray-300 hover:text-purple-300"
-              : "text-gray-700 hover:text-purple-500"
-          } transition-transform duration-200 ease-in-out transform hover:scale-105`}
-        >
-          Home
-        </NavLink>
-      </li>
     </>
   );
 
@@ -180,10 +164,10 @@ const Navbar = () => {
           {user && (
             <button
               onClick={handleSignOut}
-              className={`btn btn-ghost hidden sm:block transition-all ${
+              className={`btn btn-ghost font-semibold hidden sm:block transition-all ${
                 darkMode
-                  ? "text-white hover:text-purple-300"
-                  : "text-gray-700 hover:text-purple-500"
+                  ? "text-red-500 hover:text-red-400"
+                  : "text-red-600 hover:text-red-500"
               }`}
             >
               Logout
@@ -260,10 +244,10 @@ const Navbar = () => {
 
                     <button
                       onClick={handleSignOut}
-                      className={`btn btn-ghost transition-all ${
+                      className={`btn btn-ghost font-semibold transition-all ${
                         darkMode
-                          ? "text-white hover:text-purple-300"
-                          : "text-gray-700 hover:text-purple-500"
+                          ? "text-red-500 hover:text-red-400"
+                          : "text-red-600 hover:text-red-500"
                       }`}
                     >
                       Logout
